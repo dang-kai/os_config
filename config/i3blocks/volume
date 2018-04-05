@@ -1,0 +1,2 @@
+#!/bin/bash
+amixer -M get Master | awk -F '[][]' 'NR==5{if($6=="on") print $2; else print "MUTE"}'
