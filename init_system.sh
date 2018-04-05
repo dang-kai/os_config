@@ -1,11 +1,13 @@
 #!/bin/bash
 
+echo Run after arch-chroot.
 echo Change root password...
 passwd
 
 echo Add user and create new password...
-useradd -m -g users -G wheel -s /bin/bash dk
-passwd dk
+uname=dk
+useradd -m -g users -G wheel -s /bin/bash $uname
+passwd $uname
 
 echo Set timezone...
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
@@ -17,6 +19,8 @@ echo "$hname" > /etc/hostname
 echo "127.0.0.1 localhost.localdomain localhost" > /etc/hosts
 echo "::1 localhost.localdomain localhost" >> /etc/hosts
 echo "127.0.1.1 $hname.localdomain $hname" >> /etc/hosts
+git config --global user.email $uname@$hname
+git config --global user.name $uname
 
 echo Set locale...
 cp /etc/locale.gen /etc/locale.gen.bak
