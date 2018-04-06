@@ -20,7 +20,11 @@ cd ..
 rm -rf yaourt*
 
 yaourt -S --noconfirm tk
-git config --global user.email dk@aehost
-git config --global user.name dk
 
-yaourt -S --noconfirm 
+# install fonts
+yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+
+# copy config files
+cp config/bashrc ~/.bashrc
+cp -r i3 ~/.i3
+cp -r 
