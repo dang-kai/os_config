@@ -1,0 +1,37 @@
+--------BOOTABLE IMAGE--------
+- Make partitions. 
+	BIOS + MBR + FDISK / UEFI + GPT + GDISK
+	(512M UEFI +) 16G swap + root
+	mkfs.fst -F32; mkswap; mkfs.ext4;
+- Mount
+	Mount to /mnt (/mnt/boot) 
+	swap on
+- Internet
+	ip link set <dev> up
+	iw dev <dev> link/scan/connect
+	dhcpcd <dev>
+- Mirror
+	pacman -S reflector
+	reflector --verbose -l 20 -p http --sort rate --save </etc/pacman.d/mirrorlist>
+- Mount
+	swapon <dev>
+	mount <dev> /mnt
+- Install system
+	pacstrap /mnt base base-devel
+	genfstab -U /mnt >> /mnt/etc/fstab
+- Chroot
+	arch-chroot /mnt
+--------CHROOT--------
+- Install git
+	pacman -S git
+	git clone https://github.com/dang-kai/install_archlinux.git
+- Initialize system
+	bash init_settings.sh
+- Grub (MBR boot only)
+	pacman -S grub
+	grub-install --target=i386-pc /dev/sdX
+	grub-mkconfig -o /boot/grub/grub.cfg
+--------REBOOT--------
+- Connect to internet using networkmanager
+- Install software
+	bash install_software.sh
