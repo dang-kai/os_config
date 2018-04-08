@@ -1,0 +1,2 @@
+Change gtk program theme.
+Test toggle touchpad.
