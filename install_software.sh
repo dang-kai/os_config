@@ -19,7 +19,7 @@ sudo pacman -U *.xz
 cd ..
 rm -rf yaourt*
 
-yaourt -S --noconfirm tk rxvt-unicode-patched
+yaourt -S --noconfirm tk rxvt-unicode-patched redshift
 
 # install fonts
 yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei
@@ -35,7 +35,7 @@ sudo cp tmux.conf /etc/tmux.conf
 sudo cp local.conf /etc/fonts/local.conf
 
 # install software
-yaourt -S --noconfirm uget transmission-gtk openssh
+yaourt -S --noconfirm uget transmission-qt openssh
 yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx bc
 cp -r config/fcitx/ ~/.config/
 yaourt -S kwrite spectacle vlc
