@@ -40,8 +40,9 @@ sudo cp config/makepkg.conf /etc/makepkg.conf
 # install software
 yaourt -S --noconfirm uget transmission-qt openssh
 yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx bc
+yaourt -S --noconfirm ntfs-3g udisks2 gwenview
 cp -r config/fcitx/ ~/.config/
-yaourt -S --noconfirm kwrite spectacle vlc meld
+yaourt -S --noconfirm vlc xfce4-screenshooter thunar ristretto
 yaourt -S --noconfirm dropbox google-chrome
 
 # for virtualbox guest system

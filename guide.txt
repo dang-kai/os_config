@@ -36,3 +36,6 @@
 - Manually move install_archlinux to 433/system/
 - Install software
 	bash install_software.sh
+--------MANUAL CONFIG--------
+- Manually add input method in fcitx
+- Mount USB with: udiskctl mount -b /dev/sdX
