@@ -37,4 +37,6 @@ sudo cp local.conf /etc/fonts/local.conf
 # install software
 yaourt -S --noconfirm uget transmission-gtk openssh
 yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx bc
+cp -r config/fcitx/ ~/.config/
 yaourt -S --noconfirm dropbox google-chrome
+
