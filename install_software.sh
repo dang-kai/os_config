@@ -19,7 +19,7 @@ sudo pacman -U *.xz
 cd ..
 rm -rf yaourt*
 
-yaourt -S --noconfirm tk rxvt-unicode-patched redshift sysstat dmenu
+yaourt -S --noconfirm tk rxvt-unicode-patched redshift sysstat dmenu ranger
 
 # install fonts
 yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei
@@ -38,12 +38,15 @@ sudo cp config/local.conf /etc/fonts/local.conf
 sudo cp config/makepkg.conf /etc/makepkg.conf
 
 # install software
-yaourt -S --noconfirm uget transmission-qt openssh
-yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx bc
+yaourt -S --noconfirm uget transmission-qt openssh bc cmake
+yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx 
 yaourt -S --noconfirm ntfs-3g udisks2 gwenview
 cp -r config/fcitx/ ~/.config/
-yaourt -S --noconfirm vlc xfce4-screenshooter thunar ristretto
-yaourt -S --noconfirm dropbox google-chrome
+yaourt -S --noconfirm vlc dropbox 
+
+# desktop tools
+#yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
+yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite gwenview
 
 # for virtualbox guest system
 echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'

@@ -86,8 +86,9 @@ alias la='ls -A'
 alias bc='bc -l'
 alias vi='vim'
 alias nload='nload -i 20480 -o 20480'
-alias slog='vim ~/433/system/aehost/system_log/AEHost1'
-alias cdae='cd ~/433/workspace/PyAE/'
-alias matlab='/usr/local/MATLAB/R2016a/bin/matlab'
+#alias slog='vim ~/433/system/aehost/system_log/AEHost1'
+#alias cdae='cd ~/433/workspace/PyAE/'
+#alias matlab='/usr/local/MATLAB/R2016a/bin/matlab'
 export VISUAL='vim'
+export DESKTOP_SESSION=kde
 
