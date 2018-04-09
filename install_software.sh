@@ -50,3 +50,4 @@ yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite
 
 # for virtualbox guest system
 echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
+echo 'Enable vboxservice.service.'
