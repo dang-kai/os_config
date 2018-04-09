@@ -203,6 +203,7 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 exec --no-startup-id xset dpms 0 0 0
+exec --no-startup-id xset s 0 0 
 exec --no-startup-id fcitx
 exec --no-startup-id redshift -O 5400
 exec --no-startup-id /home/dk/433/system/install_archlinux/restore_touchpad.sh
