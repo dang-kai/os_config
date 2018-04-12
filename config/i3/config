@@ -30,7 +30,7 @@ set $mod Mod4
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q -M sset Master 3%+; pkill -SIGRTMIN+10 i3blocks"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q -M sset Master 3%-; pkill -SIGRTMIN+10 i3blocks"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle; pkill -SIGRTMIN+10 i3blocks"
-bindsym Print exec --no-startup-id xfce4-screenshooter
+bindsym Print exec --no-startup-id spectacle
 bindsym XF86TouchpadToggle exec --no-startup-id /home/dk/433/system/install_archlinux/toggle_touchpad
 ##########
 
