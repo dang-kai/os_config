@@ -48,6 +48,9 @@ yaourt -S --noconfirm vlc dropbox
 #yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
 yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite gwenview
 
+# more software
+yaourt -S --noconfirm ipython jupyter
+
 # for virtualbox guest system
 echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
 echo 'Enable vboxservice.service.'
