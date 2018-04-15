@@ -19,7 +19,7 @@ sudo pacman -U *.xz
 cd ..
 rm -rf yaourt*
 
-yaourt -S --noconfirm tk rxvt-unicode-patched redshift sysstat dmenu ranger
+yaourt -S --noconfirm tk rxvt-unicode-patched redshift sysstat dmenu ranger acpi alsa-utils
 
 # install fonts
 yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei

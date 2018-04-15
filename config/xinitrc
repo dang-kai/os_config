@@ -40,6 +40,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # start i3wm
+xrandr --dpi 110
 exec i3
 
 # start some nice programs
