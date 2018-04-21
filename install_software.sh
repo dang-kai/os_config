@@ -42,7 +42,7 @@ yaourt -S --noconfirm uget transmission-qt openssh bc cmake
 yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx 
 yaourt -S --noconfirm ntfs-3g udisks2 gwenview
 cp -r config/fcitx/ ~/.config/
-yaourt -S --noconfirm vlc dropbox 
+yaourt -S --noconfirm vlc xorg-xbacklight
 
 # desktop tools
 #yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
@@ -50,6 +50,9 @@ yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite
 
 # more software
 yaourt -S --noconfirm ipython jupyter
+yaourt -S --noconfirm cups ghostscript gsfonts gutenprint
+echo 'Manually edit /etc/cups/cups-files.conf to let normal user add printer.'
+yaourt -S dropbox
 
 # for virtualbox guest system
 echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
