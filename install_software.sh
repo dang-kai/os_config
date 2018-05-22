@@ -47,6 +47,7 @@ yaourt -S --noconfirm vlc xorg-xbacklight
 # desktop tools
 #yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
 yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite gwenview
+cp config/kdegloblas ~/.config/kdeglobals
 
 # more software
 yaourt -S --noconfirm ipython jupyter
