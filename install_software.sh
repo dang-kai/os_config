@@ -58,3 +58,12 @@ yaourt -S dropbox
 # for virtualbox guest system
 echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
 echo 'Enable vboxservice.service.'
+
+# for time and timezone update
+yaourt -S --noconfirm ntp tzupdate
+
+# for xiaomi
+yaourt -S --noconfirm nvidia bumblebee nvidia-settings nvidia-utils ttf-liberation xf86-video-intel lib32-virtualgl lib32-nvidia-utils
+
+# Steam
+echo 'Install steam-native-runtime if needed.'
