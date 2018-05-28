@@ -14,7 +14,7 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc --utc
 
 echo Set hostname...
-hname=Vhost1
+hname=AEHost8
 echo "$hname" > /etc/hostname
 echo "127.0.0.1 localhost.localdomain localhost" > /etc/hosts
 echo "::1 localhost.localdomain localhost" >> /etc/hosts

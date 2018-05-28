@@ -3,16 +3,13 @@
 	BIOS + MBR + FDISK / UEFI + GPT + GDISK
 	(512M UEFI +) 16G swap + root
 	mkfs.fst -F32; mkswap; mkfs.ext4;
-- Mount
-	Mount to /mnt (/mnt/boot) 
-	swap on
 - Internet
 	ip link set <dev> up
 	iw dev <dev> link/scan/connect
 	dhcpcd <dev>
 - Mirror
 	pacman -S reflector
-	reflector --verbose -l 20 -p http --sort rate --save </etc/pacman.d/mirrorlist>
+	reflector --verbose -l 50 -p http --sort rate --save </etc/pacman.d/mirrorlist>
 - Mount
 	swapon <dev>
 	mount <dev> /mnt
