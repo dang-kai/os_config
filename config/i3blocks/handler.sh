@@ -24,18 +24,18 @@ case "$1" in
         ;;
     ac_adapter)
         case "$2" in
-            AC|ACAD|ADP0)
+            AC|ACAD|ADP0|ACPI0003:00)
                 case "$4" in
                     00000000)
                         logger 'AC unpluged'
 			# turn off turbo
-			echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
-			echo 25 > /sys/devices/system/cpu/intel_pstate/max_perf_pct
+			#echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+			echo 20 > /sys/devices/system/cpu/intel_pstate/max_perf_pct
                         ;;
                     00000001)
                         logger 'AC pluged'
 			# turn on turbo
-			echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo
+			#echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo
 			echo 100 > /sys/devices/system/cpu/intel_pstate/max_perf_pct
                         ;;
                 esac
