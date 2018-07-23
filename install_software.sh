@@ -3,7 +3,7 @@
 echo Run after reboot
 echo Install software... 
 sudo pacman -Syu
-sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3 wget unarj lzip lzop unrar unzip p7zip 
+sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3-wm i3blocks i3lock i3status wget unarj lzip lzop unrar unzip p7zip 
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
 tar -xf package-query.tar.gz
@@ -47,7 +47,7 @@ yaourt -S --noconfirm vlc xorg-xbacklight
 # desktop tools
 #yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
 yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite gwenview
-cp config/kdegloblas ~/.config/kdeglobals
+cp config/kdeglobals ~/.config/kdeglobals
 
 # more software
 yaourt -S --noconfirm ipython jupyter
