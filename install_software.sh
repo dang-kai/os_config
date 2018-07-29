@@ -30,6 +30,7 @@ cp config/vimrc ~/.vimrc
 cp config/xinitrc ~/.xinitrc
 cp config/Xresources ~/.Xresources
 cp config/i3blocks.conf ~/.i3blocks.conf
+cp config/xprofile ~/.xprofile
 cp -r config/i3 ~/.i3
 cp -r config/fcitx ~/.config/
 echo 'Manually add sunpinyin to the input method list.'
@@ -39,7 +40,7 @@ sudo cp config/makepkg.conf /etc/makepkg.conf
 
 # install software
 yaourt -S --noconfirm uget transmission-qt openssh bc cmake
-yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx 
+yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx-im
 yaourt -S --noconfirm ntfs-3g udisks2 gwenview
 cp -r config/fcitx/ ~/.config/
 yaourt -S --noconfirm vlc xorg-xbacklight
