@@ -3,7 +3,7 @@
 echo Run after reboot
 echo Install software... 
 sudo pacman -Syu
-sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3 wget unarj lzip lzop unrar unzip p7zip 
+sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3-wm i3blocks i3lock i3status wget unarj lzip lzop unrar unzip p7zip 
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
 tar -xf package-query.tar.gz
@@ -30,6 +30,7 @@ cp config/vimrc ~/.vimrc
 cp config/xinitrc ~/.xinitrc
 cp config/Xresources ~/.Xresources
 cp config/i3blocks.conf ~/.i3blocks.conf
+cp config/xprofile ~/.xprofile
 cp -r config/i3 ~/.i3
 cp -r config/fcitx ~/.config/
 echo 'Manually add sunpinyin to the input method list.'
@@ -39,7 +40,7 @@ sudo cp config/makepkg.conf /etc/makepkg.conf
 
 # install software
 yaourt -S --noconfirm uget transmission-qt openssh bc cmake
-yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx 
+yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx-im
 yaourt -S --noconfirm ntfs-3g udisks2 gwenview
 cp -r config/fcitx/ ~/.config/
 yaourt -S --noconfirm vlc xorg-xbacklight
@@ -47,7 +48,7 @@ yaourt -S --noconfirm vlc xorg-xbacklight
 # desktop tools
 #yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
 yaourt -S --noconfirm plasma-desktop libreoffice okular dolphin spectacle kwrite gwenview
-cp config/kdegloblas ~/.config/kdeglobals
+cp config/kdeglobals ~/.config/kdeglobals
 
 # more software
 yaourt -S --noconfirm ipython jupyter

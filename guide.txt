@@ -2,7 +2,7 @@
 - Make partitions. 
 	BIOS + MBR + FDISK / UEFI + GPT + GDISK
 	(512M UEFI +) 16G swap + root
-	mkfs.fst -F32; mkswap; mkfs.ext4;
+	mkfs.fat -F32; mkswap; mkfs.ext4;
 - Internet
 	ip link set <dev> up
 	iw dev <dev> link/scan/connect
@@ -28,6 +28,8 @@
 	pacman -S grub
 	grub-install --target=i386-pc /dev/sdX
 	grub-mkconfig -o /boot/grub/grub.cfg
+- efibootmgr (EFI boot only)
+    Check archlinux wiki.
 --------REBOOT--------
 - Connect to internet using networkmanager
 - Manually move install_archlinux to 433/system/
@@ -36,3 +38,4 @@
 --------MANUAL CONFIG--------
 - Manually add input method in fcitx
 - Mount USB with: udiskctl mount -b /dev/sdX
+- To enable hibernation: edit /etc/mkinitcpio.conf and /etc/default/grub

@@ -66,11 +66,19 @@ int main(void)
             int max_pct;
             fscanf(fp, "%d", &max_pct);
             fclose(fp);
-            printf("%4.2f%% %d/%dMHz\n", loadavg*100.0, f_cpu/1000, (int)(f_cpu_max/100000.0*max_pct));
+            printf("%4.2f%% %3.1f/%3.1f\n", loadavg*100.0, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
         }
         else
         {
             printf("%4.2f%%\n", loadavg*100.0);
+        }
+        if(loadavg > 0.95)
+        {
+            printf("#FF0000\n");
+        }
+        else if(loadavg > 0.7)
+        {
+            printf("#FFFC00\n");
         }
     }
 
