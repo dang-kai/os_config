@@ -70,7 +70,7 @@ int main(void)
         }
         else
         {
-            printf("%4.2f\%\n", loadavg*100.0);
+            printf("%4.2f%%\n", loadavg*100.0);
         }
     }
 
