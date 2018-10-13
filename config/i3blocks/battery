@@ -26,15 +26,24 @@ my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
 # read the first line of the "acpi" command output
 open (ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
 $acpi = <ACPI>;
+#$acpi = 'Battery 0: Not charging, 95%';
 close(ACPI);
 
 # fail on unexpected output
 if ($acpi !~ /: (\w+), (\d+)%/) {
-	die "$acpi\n";
+    if ($acpi !~ /: (\w+) (\w+), (\d+)%/ ){
+	    die "acpi error\n";
+    }
+    else{
+        $status = $1;
+        $percent = $3;
+    }
+}
+else{
+    $status = $1;
+    $percent = $2;
 }
 
-$status = $1;
-$percent = $2;
 $full_text = "$percent%";
 
 if ($status eq 'Discharging') {
