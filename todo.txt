@@ -1,1 +1,2 @@
 Use xdg-mime query/default to set default applications.
+xdg-mime default org.kde.dolphin.desktop inode/directory
