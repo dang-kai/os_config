@@ -29,7 +29,8 @@
 	grub-install --target=i386-pc /dev/sdX
 	grub-mkconfig -o /boot/grub/grub.cfg
 - efibootmgr (EFI boot only)
-    Check archlinux wiki.
+    efibootmgr --disk /dev/XXX --part Y --create --label 'Arch Linux' --loader /vmlinuz-linux --unicode 'root=XXXX rw initrd=\intel-ucode.img initrd=\initramfs-linux.img resume=XXXX' --verbose
+    If bootx64.efi is required, install grub with fallback path.
 --------REBOOT--------
 - Connect to internet using networkmanager
 - Manually move install_archlinux to 433/system/
