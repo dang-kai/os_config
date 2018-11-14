@@ -32,5 +32,6 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 pacman -Syu --noconfirm
 pacman -S --noconfirm intel-ucode sudo networkmanager tmux
 cp /etc/sudoers /etc/sudoers.bak
-echo "%wheel ALL=(ALL) ALL" > /etc/sudoers
+echo "root ALL=(ALL) ALL" > /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 systemctl enable NetworkManager
