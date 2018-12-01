@@ -27,9 +27,9 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # fcitx input method
-#export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx
+export XMODIFIERS=@im=fcitx
 
 # start i3wm
 xrandr --dpi 110
