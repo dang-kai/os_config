@@ -30,7 +30,6 @@ cp config/vimrc ~/.vimrc
 cp config/xinitrc ~/.xinitrc
 cp config/Xresources ~/.Xresources
 cp config/i3blocks.conf ~/.i3blocks.conf
-cp config/xprofile ~/.xprofile
 cp -r config/i3 ~/.i3
 cp -r config/fcitx ~/.config/
 echo 'Manually add sunpinyin to the input method list.'
