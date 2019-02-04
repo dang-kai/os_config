@@ -1,0 +1,9 @@
+Which desktop environment should be used as the alternate desktop environment?
+    kde-plasma: better look, good compatilibity with touchpad, configure file backup (.config/kdeglobals).
+    xfce4: lightweight, need to install and choose themes.
+    decision: kde-plasma
+
+
+Useful commands:
+    tar cz <file> | openssl enc -aes-256-cbc -e > out.tar.gz.enc
+    opnessl end -aes-256-cbc -d -in out.tar.gz.enc | tar xz

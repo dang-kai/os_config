@@ -1,4 +1,0 @@
-Which desktop environment should be used as the alternate desktop environment?
-    kde-plasma: better look, configure file backup (.config/kdeglobals).
-    xfce4: lightweight, bug when opening folders in thunar with tap to click (3 clicks), need to install and choose themes.
-    current choice: kde-plasma
