@@ -1,9 +1,13 @@
-Which desktop environment should be used as the alternate desktop environment?
-    kde-plasma: better look, good compatilibity with touchpad, configure file backup (.config/kdeglobals).
-    xfce4: lightweight, need to install and choose themes.
-    decision: kde-plasma
-
+Discussions:
+    Which desktop environment should be used as the alternate desktop environment?
+        kde-plasma: better look, good compatilibity with touchpad, configure file backup (.config/kdeglobals).
+        xfce4: lightweight, need to install and choose themes.
+        decision: kde-plasma
 
 Useful commands:
     tar cz <file> | openssl enc -aes-256-cbc -e > out.tar.gz.enc
     opnessl end -aes-256-cbc -d -in out.tar.gz.enc | tar xz
+
+Tips:
+    Qt系软件在无法在i3wm中显示右下角标. 会导致程序卡死. 比如vlc, transmission-qt5.
+
