@@ -3,6 +3,20 @@
 #include<stdlib.h>
 #include<string.h>
 
+int count_cpu_cores() {
+    FILE *fp;
+    char path[100];
+    int n_cores;
+
+    fp = popen("nproc", "r");
+    if (fp == NULL) {
+        return -1;
+    }
+    fscanf(fp, "%d", &n_cores);
+    return n_cores;
+
+}
+
 int main(void)
 {
     float a[4], b[4], loadavg;
@@ -29,18 +43,14 @@ int main(void)
     char      dir_path[] = "/sys/devices/system/cpu/cpufreq/";
     char      cpu_path[256];
     d = opendir(dir_path);
-    if(d)
-    {
-        while((dir = readdir(d)) != NULL)
-        {
-            if(dir->d_type == DT_DIR && !strncmp(dir->d_name, "policy", 6))
-            {
+    if(d) {
+        while((dir = readdir(d)) != NULL) {
+            if(dir->d_type == DT_DIR && !strncmp(dir->d_name, "policy", 6)) {
                 FILE *f;
 
                 sprintf(cpu_path, "%s%s/scaling_cur_freq", dir_path, dir->d_name);
                 f = fopen(cpu_path, "r");
-                if(f)
-                {
+                if(f) {
                     int tmpf;
                     fscanf(f, "%d", &tmpf);
                     f_cpu = tmpf>f_cpu ? tmpf : f_cpu;
@@ -49,8 +59,7 @@ int main(void)
                 
                 sprintf(cpu_path, "%s%s/scaling_max_freq", dir_path, dir->d_name);
                 f = fopen(cpu_path, "r");
-                if(f)
-                {
+                if(f) {
                     int tmpf;
                     fscanf(f, "%d", &tmpf);
                     f_cpu_max = tmpf>f_cpu ? tmpf : f_cpu_max;
@@ -61,23 +70,19 @@ int main(void)
             }
         }
         FILE *fp = fopen("/sys/devices/system/cpu/intel_pstate/max_perf_pct","r");
-        if(n_cpu > 0 && fp)
-        {
+        if(n_cpu > 0 && fp) {
             int max_pct;
             fscanf(fp, "%d", &max_pct);
             fclose(fp);
-            printf("%4.2f%% %3.1f/%3.1f\n", loadavg*100.0, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
+            printf("%4.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
+            printf("%4.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
+        } else {
+            printf("%4.1f%%\n", loadavg*100.0);
+            printf("%4.1f%%\n", loadavg*100.0);
         }
-        else
-        {
-            printf("%4.2f%%\n", loadavg*100.0);
-        }
-        if(loadavg > 0.95)
-        {
-            printf("#FF0000\n");
-        }
-        else if(loadavg > 0.7)
-        {
+        if(loadavg > 0.95) {
+            return 33;
+        } else if(loadavg > 0.5) {
             printf("#FFFC00\n");
         }
     }
