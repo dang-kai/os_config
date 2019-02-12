@@ -7,6 +7,21 @@ Discussions:
 Useful commands:
     tar cz <file> | openssl enc -aes-256-cbc -e > out.tar.gz.enc
     opnessl end -aes-256-cbc -d -in out.tar.gz.enc | tar xz
+    
+    tmux:
+        attach:             tmux a <session-name>
+
+        select session:     ctrl+b s
+        list session:       tmux ls
+        detach session:     ctrl+b d/D
+        reload session:     ctrl+b r
+
+        new window:         ctrl+b c
+        select window:      ctrl+b w
+        close window:       ctrl+b &
+
+        new panel:          ctrl+b %/"
+        close panel:        ctrl+b x
 
 Tips:
     Qt系软件在无法在i3wm中显示右下角标. 会导致程序卡死. 比如vlc, transmission-qt5.
