@@ -30,7 +30,7 @@ set $mod Mod1
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q -M sset Master 3%+; pkill -SIGRTMIN+10 i3blocks"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q -M sset Master 3%-; pkill -SIGRTMIN+10 i3blocks"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle; pkill -SIGRTMIN+10 i3blocks"
-bindsym Print exec --no-startup-id spectacle
+bindsym Print exec --no-startup-id xfce4-screenshooter
 #bindsym XF86TouchpadToggle exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/toggle_touchpad.sh
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
@@ -42,7 +42,7 @@ bindsym Mod1+c exec --no-startup-id sudo intel_pstate_control 100
 
 bindsym Mod4+f exec --no-startup-id firefox
 bindsym Mod4+c exec --no-startup-id google-chrome-stable
-bindsym Mod4+e exec --no-startup-id dolphin
+bindsym Mod4+e exec --no-startup-id thunar
 bindsym Mod4+t exec --no-startup-id thunderbird
 #bindsym Mod4+f exec --no-startup-id firefox
 #bindsym Mod4+f exec --no-startup-id firefox
