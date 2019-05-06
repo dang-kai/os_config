@@ -10,7 +10,7 @@ useradd -m -g users -G wheel -s /bin/bash $uname
 passwd $uname
 
 echo Set timezone...
-ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc --utc
 
 echo Set hostname...
