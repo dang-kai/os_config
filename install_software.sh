@@ -3,7 +3,7 @@
 echo Run after reboot
 echo Install software... 
 sudo pacman -Syu
-sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3-wm i3blocks i3lock i3status wget unarj lzip lzop unrar unzip p7zip 
+sudo pacman -S --noconfirm xorg-server arandr xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3-wm i3blocks i3lock i3status wget unarj lzip lzop unrar unzip p7zip 
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
 tar -xf package-query.tar.gz
@@ -81,4 +81,8 @@ yaourt -S --noconfirm ntp tzupdate
 #yaourt -S virtualbox virtualbox-host-modules-arch
 
 # Steam
-echo 'Install steam-native-runtime if needed.'
+#echo 'Install steam-native-runtime if needed.'
+
+# default file browser
+xdg-mime default thunar.desktop inode/directory
+
