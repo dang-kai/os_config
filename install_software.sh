@@ -46,7 +46,7 @@ yaourt -S --noconfirm vlc xorg-xbacklight
 
 # desktop tools
 #yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
-yaourt -S --noconfirm libreoffice xreader thunar xfce-screenshooter mousepad ristretto poppler-data
+yaourt -S --noconfirm libreoffice xreader thunar xfce4-screenshooter mousepad ristretto poppler-data
 cp config/kdeglobals ~/.config/kdeglobals
 
 # more software
