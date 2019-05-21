@@ -40,7 +40,7 @@ sudo cp config/makepkg.conf /etc/makepkg.conf
 # install software
 yaourt -S --noconfirm uget transmission-qt openssh bc cmake
 yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx-im
-yaourt -S --noconfirm ntfs-3g udisks2 
+yaourt -S --noconfirm ntfs-3g exfat-utils udisks2 
 cp -r config/fcitx/ ~/.config/
 yaourt -S --noconfirm vlc xorg-xbacklight
 
@@ -63,7 +63,22 @@ echo 'Enable vboxservice.service.'
 yaourt -S --noconfirm ntp tzupdate
 
 # for xiaomi
-#yaourt -S --noconfirm nvidia bumblebee bbswitch nvidia-settings nvidia-utils ttf-liberation xf86-video-intel lib32-virtualgl lib32-nvidia-utils
+#yaourt -S --noconfirm nvidia bumblebee bbswitch nvidia-settings nvidia-utils ttf-liberation xf86-video-intel 
+
+# python develop
+#yaourt -S --noconfirm pycharm-community-edition
+
+# browser
+#yaourt -S --noconfirm google-chrome
+
+# latex
+#yaourt -S --noconfirm texlive-most texlive-lang texlive-langextra biber texmaker
+
+# c/c++ develop
+#yaourt -S --noconfirm qtcreator
+
+# virtualbox
+#yaourt -S virtualbox virtualbox-host-modules-arch
 
 # Steam
 echo 'Install steam-native-runtime if needed.'
