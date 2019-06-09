@@ -4,6 +4,7 @@ echo Run after reboot
 echo Install software... 
 sudo pacman -Syu
 sudo pacman -S --noconfirm xorg-server arandr xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3-wm i3blocks i3lock i3status wget unarj lzip lzop unrar unzip p7zip 
+sudo pacman -S --noconfirm compton hsetroot # For fixing screen tearing in i3. See Archwiki.
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
 tar -xf package-query.tar.gz

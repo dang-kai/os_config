@@ -213,23 +213,20 @@ bar {
         }
 }
 
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
+# Fix screen tearing
+exec --no-startup-id hsetroot -solid '#000000' # Set background color to black. See Archwiki.
+#exec --no-startup-id compton -b 
+exec --no-startup-id compton --config /home/dk/433/system/install_archlinux/config/compton.conf -b 
+
+# Showdown screensaver and auto poweroff
 exec --no-startup-id xset dpms 0 0 0
 exec --no-startup-id xset s 0 0 
+
+# Input method 
 exec --no-startup-id fcitx
+
+# Edit color temperature
 exec --no-startup-id redshift -O 5400
+
+# Enable tap click
 exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/enable_tap_click.sh
-## for eeepc
-#exec --no-startup-id xinput set-prop 13 271 1
-## for ux330ua
-#exec --no-startup-id xinput set-prop 12 275 1
-## for xiaomi
-#exec --no-startup-id xinput set-prop 11 276 1
