@@ -46,8 +46,8 @@ cp -r config/fcitx/ ~/.config/
 yaourt -S --noconfirm vlc xorg-xbacklight
 
 # desktop tools
-#yaourt -S --noconfirm xfce4-screenshooter thunar ristretto
-yaourt -S --noconfirm libreoffice xreader thunar xfce4-screenshooter mousepad ristretto poppler-data
+yaourt -S --noconfirm libreoffice xreader poppler-data
+yaourt -S --noconfirm thunar thunar-volman gvfs xfce4-screenshooter mousepad ristretto 
 cp config/kdeglobals ~/.config/kdeglobals
 
 # more software
