@@ -1,4 +1,4 @@
-URxvt.font: xft:Ubuntu Mono:size=11, xft:WenQuanYi Micro Hei Mono
+URxvt.font: xft:Ubuntu Mono:size=11, xft:Adobe Song Std
 URxvt.inputMethod: fcitx
 /* Couleurs Tango */
 URxvt.foreground: #D8D8D8
