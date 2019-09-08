@@ -74,11 +74,11 @@ int main(void)
             int max_pct;
             fscanf(fp, "%d", &max_pct);
             fclose(fp);
-            printf("%4.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
-            printf("%4.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
+            printf("%3.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
+            printf("%3.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
         } else {
-            printf("%4.1f%%\n", loadavg*100.0);
-            printf("%4.1f%%\n", loadavg*100.0);
+            printf("%3.1f%%\n", loadavg*100.0);
+            printf("%3.1f%%\n", loadavg*100.0);
         }
         if(loadavg > 0.95) {
             return 33;
