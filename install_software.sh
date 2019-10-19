@@ -84,6 +84,9 @@ yaourt -S --noconfirm ntp tzupdate
 # Steam
 #echo 'Install steam-native-runtime if needed.'
 
+# Zertier
+#yaourt -S zerotier-one
+
 # default file browser
 xdg-mime default thunar.desktop inode/directory
 
