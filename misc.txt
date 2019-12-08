@@ -17,10 +17,6 @@ Useful commands:
         new panel:          ctrl+b %/"
         close panel:        ctrl+b x
 
-Tips:
-    Qt系软件在无法在i3wm中显示右下角标. 会导致程序卡死. 比如vlc, transmission-qt5.
-
-
 mayavi(4.6.2):
     有两个额外依赖: glew和pugixml 没有被默认安装. 需要手动安装.
 
