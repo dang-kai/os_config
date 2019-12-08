@@ -87,6 +87,10 @@ yaourt -S --noconfirm ntp tzupdate
 # Zertier
 #yaourt -S zerotier-one
 
+# SMB client
+yaorut -S --noconfirm gvfs-smb sshfs
+
 # default file browser
 xdg-mime default thunar.desktop inode/directory
+
 
