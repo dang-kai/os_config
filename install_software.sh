@@ -3,6 +3,7 @@
 echo Run after reboot
 echo Install software... 
 sudo pacman -Syu
+sudo pacman -S --noconfirm binutils gcc make pkg-config fakeroot cmake
 sudo pacman -S --noconfirm xorg-server arandr xorg-xinit xorg-xinput xf86-video-intel acpid reflector firefox i3-wm i3blocks i3lock i3status wget unarj lzip lzop unrar unzip p7zip 
 sudo pacman -S --noconfirm compton hsetroot # For fixing screen tearing in i3. See Archwiki.
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
@@ -20,7 +21,8 @@ sudo pacman -U *.xz
 cd ..
 rm -rf yaourt*
 
-yaourt -S --noconfirm tk rxvt-unicode-patched redshift sysstat dmenu ranger acpi alsa-utils lshw
+yaourt -S --noconfirm tk redshift sysstat dmenu ranger acpi alsa-utils lshw
+#yaourt -S --noconfirm rxvt-unicode-patched
 
 # install fonts
 yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei
@@ -56,6 +58,8 @@ yaourt -S --noconfirm cups ghostscript gsfonts gutenprint
 echo 'Manually edit /etc/cups/cups-files.conf to let normal user add printer.'
 #yaourt -S dropbox
 
+yaourt -S tigervnc
+
 # for virtualbox guest system
 echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
 echo 'Enable vboxservice.service.'
@@ -70,7 +74,7 @@ yaourt -S --noconfirm ntp tzupdate
 #yaourt -S --noconfirm pycharm-community-edition
 
 # browser
-#yaourt -S --noconfirm google-chrome
+yaourt -S --noconfirm google-chrome
 
 # latex
 #yaourt -S --noconfirm texlive-most texlive-lang texlive-langextra biber texmaker
@@ -79,7 +83,7 @@ yaourt -S --noconfirm ntp tzupdate
 #yaourt -S --noconfirm qtcreator
 
 # virtualbox
-#yaourt -S virtualbox virtualbox-host-modules-arch
+#yaourt -S virtualbox virtualbox-host-modules-arch virtualbox-ext-oracle
 
 # Steam
 #echo 'Install steam-native-runtime if needed.'
@@ -88,7 +92,7 @@ yaourt -S --noconfirm ntp tzupdate
 #yaourt -S zerotier-one
 
 # SMB client
-yaorut -S --noconfirm gvfs-smb sshfs
+#yaourt -S --noconfirm gvfs-smb sshfs
 
 # default file browser
 xdg-mime default thunar.desktop inode/directory
