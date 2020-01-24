@@ -14,16 +14,16 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc --utc
 
 echo Set hostname...
-hname=AEHost8
+hname=AEHost2
 echo "$hname" > /etc/hostname
 echo "127.0.0.1 localhost.localdomain localhost" > /etc/hosts
 echo "::1 localhost.localdomain localhost" >> /etc/hosts
 echo "127.0.1.1 $hname.localdomain $hname" >> /etc/hosts
-echo "10.144.1.1 raspi2" >> /etc/hosts
+echo "10.144.1.1 aeserv1" >> /etc/hosts
 echo "10.144.0.1 aehost1" >> /etc/hosts
 echo "10.144.0.2 aehost2" >> /etc/hosts
-git config --global user.email $uname@$hname
-git config --global user.name $uname
+runuser -l $uname -c "git config --global user.email $uname@$hname"
+runuser -l $uname -c "git config --global user.name $uname"
 
 echo Set locale...
 cp /etc/locale.gen /etc/locale.gen.bak
