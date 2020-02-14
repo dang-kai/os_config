@@ -24,3 +24,5 @@ set default applications:
     xdg-mime default Thunar.desktop inode/directory
     剩下的默认程序可用Thunar直接设置.
 
+VSCode:
+    Config file "settings.json" is saved at: ".config/Code - OSS/User/settings.json"
