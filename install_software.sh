@@ -42,7 +42,7 @@ sudo cp config/makepkg.conf /etc/makepkg.conf
 
 # install software
 yaourt -S --noconfirm uget transmission-qt openssh bc cmake
-yaourt -S --noconfirm fcitx fcitx-sunpinyin fcitx-configtool fcitx-im
+yaourt -S --noconfirm fcitx-sunpinyin fcitx-configtool fcitx-im
 yaourt -S --noconfirm ntfs-3g exfat-utils udisks2 
 cp -r config/fcitx/ ~/.config/
 yaourt -S --noconfirm vlc xorg-xbacklight
