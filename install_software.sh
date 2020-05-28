@@ -25,7 +25,7 @@ yaourt -S --noconfirm tk redshift sysstat dmenu ranger acpi alsa-utils lshw
 #yaourt -S --noconfirm rxvt-unicode-patched
 
 # install fonts
-yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei
+yaourt -S --noconfirm ttf-dejavu ttf-ubuntu-font-family noto-fonts noto-fonts-extra noto-fonts-emoji noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts wqy-microhei
 
 # copy config files
 cp config/bashrc ~/.bashrc
@@ -34,7 +34,7 @@ cp config/xinitrc ~/.xinitrc
 cp config/Xresources ~/.Xresources
 cp config/i3blocks.conf ~/.i3blocks.conf
 cp -r config/i3 ~/.i3
-cp -r config/fcitx ~/.config/
+#cp -r config/fcitx ~/.config/
 echo 'Manually add sunpinyin to the input method list.'
 sudo cp config/tmux.conf /etc/tmux.conf
 sudo cp config/local.conf /etc/fonts/local.conf
