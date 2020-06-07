@@ -31,11 +31,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q -M sset Master 3%+;
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q -M sset Master 3%-; pkill -SIGRTMIN+10 i3blocks"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle; pkill -SIGRTMIN+10 i3blocks"
 bindsym Print exec --no-startup-id xfce4-screenshooter
-#bindsym XF86TouchpadToggle exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/toggle_touchpad.sh
+#bindsym XF86TouchpadToggle exec --no-startup-id /home/dk/433/system/os_config/scripts/toggle_touchpad.sh
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
-bindsym Mod1+m exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/toggle_external_monitor.sh
+bindsym Mod1+m exec --no-startup-id /home/dk/433/system/os_config/scripts/toggle_external_monitor.sh
 bindsym Mod1+z exec --no-startup-id sudo intel_pstate_control 20
 bindsym Mod1+x exec --no-startup-id sudo intel_pstate_control 50
 bindsym Mod1+c exec --no-startup-id sudo intel_pstate_control 100
@@ -46,7 +46,7 @@ bindsym Mod4+e exec --no-startup-id thunar
 bindsym Mod4+t exec --no-startup-id thunderbird
 bindsym Mod4+Mod1+s exec "systemctl suspend"
 bindsym Mod4+Mod1+h exec "systemctl hibernate"
-bindsym Mod4+Mod1+d exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/all_screen_on.sh
+bindsym Mod4+Mod1+d exec --no-startup-id /home/dk/433/system/os_config/scripts/all_screen_on.sh
 ##########
 
 
@@ -215,7 +215,7 @@ bar {
 # Fix screen tearing
 exec --no-startup-id hsetroot -solid '#000000' # Set background color to black. See Archwiki.
 #exec --no-startup-id compton -b 
-exec --no-startup-id compton --config /home/dk/433/system/install_archlinux/config/compton.conf -b 
+exec --no-startup-id compton --config /home/dk/433/system/os_config/config/compton.conf -b 
 
 # Showdown screensaver and auto poweroff
 exec --no-startup-id xset dpms 0 0 0
@@ -228,4 +228,4 @@ exec --no-startup-id fcitx
 exec --no-startup-id redshift -O 5400
 
 # Enable tap click
-exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/enable_tap_click.sh
+exec --no-startup-id /home/dk/433/system/os_config/scripts/enable_tap_click.sh
