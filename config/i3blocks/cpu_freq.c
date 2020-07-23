@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<dirent.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <dirent.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 int count_cpu_cores() {
     FILE *fp;

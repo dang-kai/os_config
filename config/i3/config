@@ -31,11 +31,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q -M sset Master 3%+;
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q -M sset Master 3%-; pkill -SIGRTMIN+10 i3blocks"
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle; pkill -SIGRTMIN+10 i3blocks"
 bindsym Print exec --no-startup-id xfce4-screenshooter
-#bindsym XF86TouchpadToggle exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/toggle_touchpad.sh
-bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
-bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
+#bindsym XF86TouchpadToggle exec --no-startup-id /home/dk/433/system/os_config/scripts/toggle_touchpad.sh
+#bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 2"
+#bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 2"
 
-bindsym Mod1+m exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/toggle_external_monitor.sh
+bindsym Mod1+m exec --no-startup-id /home/dk/433/system/os_config/scripts/toggle_external_monitor.sh
 bindsym Mod1+z exec --no-startup-id sudo intel_pstate_control 20
 bindsym Mod1+x exec --no-startup-id sudo intel_pstate_control 50
 bindsym Mod1+c exec --no-startup-id sudo intel_pstate_control 100
@@ -46,7 +46,7 @@ bindsym Mod4+e exec --no-startup-id thunar
 bindsym Mod4+t exec --no-startup-id thunderbird
 bindsym Mod4+Mod1+s exec "systemctl suspend"
 bindsym Mod4+Mod1+h exec "systemctl hibernate"
-bindsym Mod4+Mod1+d exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/all_screen_on.sh
+bindsym Mod4+Mod1+d exec --no-startup-id /home/dk/433/system/os_config/scripts/all_screen_on.sh
 ##########
 
 
@@ -71,7 +71,7 @@ bindsym Mod1+d exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+bindsym Mod1+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym Mod1+$left focus left
@@ -142,7 +142,18 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+set $ws21 "21"
+set $ws22 "22"
 
 # switch to workspace
 bindsym Mod1+1 workspace $ws1
@@ -155,6 +166,18 @@ bindsym Mod1+7 workspace $ws7
 bindsym Mod1+8 workspace $ws8
 bindsym Mod1+9 workspace $ws9
 bindsym Mod1+0 workspace $ws10
+bindsym Mod1+F1 workspace $ws11
+bindsym Mod1+F2 workspace $ws12
+bindsym Mod1+F3 workspace $ws13
+bindsym Mod1+F4 workspace $ws14
+bindsym Mod1+F5 workspace $ws15
+bindsym Mod1+F6 workspace $ws16
+bindsym Mod1+F7 workspace $ws17
+bindsym Mod1+F8 workspace $ws18
+bindsym Mod1+F9 workspace $ws19
+bindsym Mod1+F10 workspace $ws20
+bindsym Mod1+F11 workspace $ws21
+bindsym Mod1+F12 workspace $ws22
 
 # move focused container to workspace
 bindsym Mod1+Shift+1 move container to workspace $ws1
@@ -167,13 +190,26 @@ bindsym Mod1+Shift+7 move container to workspace $ws7
 bindsym Mod1+Shift+8 move container to workspace $ws8
 bindsym Mod1+Shift+9 move container to workspace $ws9
 bindsym Mod1+Shift+0 move container to workspace $ws10
+bindsym Mod1+Shift+F1 move container to workspace $ws11
+bindsym Mod1+Shift+F2 move container to workspace $ws12
+bindsym Mod1+Shift+F3 move container to workspace $ws13
+bindsym Mod1+Shift+F4 move container to workspace $ws14
+bindsym Mod1+Shift+F5 move container to workspace $ws15
+bindsym Mod1+Shift+F6 move container to workspace $ws16
+bindsym Mod1+Shift+F7 move container to workspace $ws17
+bindsym Mod1+Shift+F8 move container to workspace $ws18
+bindsym Mod1+Shift+F9 move container to workspace $ws19
+bindsym Mod1+Shift+F10 move container to workspace $ws20
+bindsym Mod1+Shift+F11 move container to workspace $ws21
+bindsym Mod1+Shift+F12 move container to workspace $ws22
 
 # reload the configuration file
 bindsym Mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod1+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -205,17 +241,16 @@ bindsym Mod1+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks
-        colors {
-            background #222222
-            separator #FFFFFF
-        }
+    status_command i3blocks
+    colors {
+        background #222222
+        separator #FFFFFF
+    }
 }
 
 # Fix screen tearing
 exec --no-startup-id hsetroot -solid '#000000' # Set background color to black. See Archwiki.
-#exec --no-startup-id compton -b 
-exec --no-startup-id compton --config /home/dk/433/system/install_archlinux/config/compton.conf -b 
+exec --no-startup-id compton --config /home/dk/433/system/os_config/config/compton.conf -b 
 
 # Showdown screensaver and auto poweroff
 exec --no-startup-id xset dpms 0 0 0
@@ -228,4 +263,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id redshift -O 5400
 
 # Enable tap click
-exec --no-startup-id /home/dk/433/system/install_archlinux/scripts/enable_tap_click.sh
+#exec --no-startup-id /home/dk/433/system/os_config/scripts/enable_tap_click.sh
+
+# Enable bluetooth
+#exec --no-startup-id blueman-applet
