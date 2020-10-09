@@ -49,7 +49,7 @@ yaourt -S --noconfirm vlc xorg-xbacklight
 
 # desktop tools
 yaourt -S --noconfirm libreoffice-still xreader poppler-data
-yaourt -S --noconfirm thunar thunar-volman gvfs xfce4-screenshooter mousepad ristretto 
+yaourt -S --noconfirm thunar thunar-volman gvfs xfce4-screenshooter mousepad nomacs
 cp config/kdeglobals ~/.config/kdeglobals
 
 # more software
