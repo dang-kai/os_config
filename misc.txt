@@ -26,3 +26,9 @@ set default applications:
 
 VSCode:
     Config file "settings.json" is saved at: ".config/Code - OSS/User/settings.json"
+
+To change default dmesg log level (usually used to avoid printing error message on the login screen):
+    Add the following lines to /etc/sysctl.d/99-sysctl.conf (Originally /etc/sysctl.conf)
+        # Uncomment the following to stop low-level messages on console
+        kernel.printk = 3 4 1 3
+    
