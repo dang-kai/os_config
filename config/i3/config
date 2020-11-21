@@ -265,5 +265,5 @@ exec --no-startup-id redshift -O 5400
 # Enable tap click
 #exec --no-startup-id /home/dk/433/system/os_config/scripts/enable_tap_click.sh
 
-# Enable bluetooth
+# Enable bluetooth applet
 #exec --no-startup-id blueman-applet
