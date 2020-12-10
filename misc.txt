@@ -27,3 +27,7 @@ To change default dmesg log level (usually used to avoid printing error message 
 
 Install and config kvm
     Install qemu(Virtual IO) virt-manager(GUI manager) ovmf(UEFI boot) dnsmasq(NAT support) ebtables(NAT support)
+    Add user to group kvm and libvirt.
+    Choose single slot and multi core as CPU topoloty.
+    Switch graphic card to qxl(should be default).
+    Install spice-guest-tools on the guest system.
