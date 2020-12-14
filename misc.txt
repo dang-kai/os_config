@@ -1,8 +1,5 @@
-Useful commands:
-    tar cz <file> | openssl enc -aes-256-cbc -e > out.tar.gz.enc
-    opnessl end -aes-256-cbc -d -in out.tar.gz.enc | tar xz
-    
-    tmux:
+Useful commands
+    tmux
         attach:             tmux a <session-name>
 
         select session:     ctrl+b s
@@ -17,12 +14,20 @@ Useful commands:
         new panel:          ctrl+b %/"
         close panel:        ctrl+b x
 
-mayavi(4.6.2):
-    有两个额外依赖: glew和pugixml 没有被默认安装. 需要手动安装.
-
-set default applications:
+Set default applications:
     xdg-mime default Thunar.desktop inode/directory
-    剩下的默认程序可用Thunar直接设置.
 
 VSCode:
     Config file "settings.json" is saved at: ".config/Code - OSS/User/settings.json"
+
+To change default dmesg log level (usually used to avoid printing error message on the login screen):
+    Add the following lines to /etc/sysctl.d/99-sysctl.conf (Originally /etc/sysctl.conf)
+        # Uncomment the following to stop low-level messages on console
+        kernel.printk = 3 4 1 3
+
+Install and config kvm
+    Install qemu(Virtual IO) virt-manager(GUI manager) ovmf(UEFI boot) dnsmasq(NAT support) ebtables(NAT support)
+    Add user to group kvm and libvirt.
+    Choose single slot and multi core as CPU topoloty.
+    Switch graphic card to qxl(should be default).
+    Install spice-guest-tools on the guest system.
