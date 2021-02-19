@@ -61,8 +61,8 @@ echo 'Manually edit /etc/cups/cups-files.conf to let normal user add printer.'
 yaourt -S tigervnc
 
 # for virtualbox guest system
-echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
-echo 'Enable vboxservice.service.'
+# echo 'Install virtualbox-guest-utils if the system is running on virtualbox.'
+# echo 'Enable vboxservice.service.'
 
 # for time and timezone update
 yaourt -S --noconfirm ntp tzupdate
@@ -81,12 +81,6 @@ yaourt -S --noconfirm google-chrome
 
 # c/c++ develop
 #yaourt -S --noconfirm qtcreator
-
-# virtualbox
-#yaourt -S virtualbox virtualbox-host-modules-arch virtualbox-ext-oracle
-
-# Steam
-#echo 'Install steam-native-runtime if needed.'
 
 # Zertier
 #yaourt -S zerotier-one
