@@ -103,7 +103,7 @@ IMSwitchKey=False
 # Commit when toggle state
 # Available Value:
 # True False
-#SendTextWhenSwitchEng=True
+SendTextWhenSwitchEng=False
 # Candidate Word Number
 #CandidateWordNumber=5
 # Give the tips of Phrase
