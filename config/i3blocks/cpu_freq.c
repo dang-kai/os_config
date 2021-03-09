@@ -18,8 +18,7 @@ int count_cpu_cores() {
 
 }
 
-int main(void)
-{
+int main(void) {
     float a[4], b[4], loadavg;
     FILE *fp;
     char msg[512];
@@ -28,13 +27,14 @@ int main(void)
     fscanf(fp, "%*s %f %f %f %f", &a[0], &a[1], &a[2], &a[3]);
     fclose(fp);
 
-    sleep(1);
+    usleep(800000);
 
     fp = fopen("/proc/stat", "r");
     fscanf(fp, "%*s %f %f %f %f", &b[0], &b[1], &b[2], &b[3]);
     fclose(fp);
     
-    loadavg = (b[0]+b[1]+b[2]-a[0]-a[1]-a[2])/(b[0]+b[1]+b[2]+b[3]-a[0]-a[1]-a[2]-a[3]);
+    loadavg = (b[0] + b[1] + b[2]        - a[0] - a[1] - a[2]       ) / 
+              (b[0] + b[1] + b[2] + b[3] - a[0] - a[1] - a[2] - a[3]);
 
     DIR       *d;
     struct    dirent *dir;
@@ -54,7 +54,7 @@ int main(void)
                 if(f) {
                     int tmpf;
                     fscanf(f, "%d", &tmpf);
-                    f_cpu = tmpf>f_cpu ? tmpf : f_cpu;
+                    f_cpu = tmpf > f_cpu ? tmpf : f_cpu;
                     fclose(f);
                 }
                 
@@ -63,7 +63,7 @@ int main(void)
                 if(f) {
                     int tmpf;
                     fscanf(f, "%d", &tmpf);
-                    f_cpu_max = tmpf>f_cpu ? tmpf : f_cpu_max;
+                    f_cpu_max = tmpf > f_cpu ? tmpf : f_cpu_max;
                     fclose(f);
                 }
                 
@@ -75,11 +75,11 @@ int main(void)
             int max_pct;
             fscanf(fp, "%d", &max_pct);
             fclose(fp);
-            printf("%3.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
-            printf("%3.1f%% %3.1f/%3.1f\n", loadavg*100.0*n_cpu, (float)(f_cpu/1000000.0), (float)(f_cpu_max/100000000.0*max_pct));
+            printf("%3.1f%% %3.1f/%3.1f\n", loadavg * 100.0 * n_cpu, (float)(f_cpu / 1000000.0f), (float)(f_cpu_max / 100000000.0f * max_pct));
+            printf("%3.1f%% %3.1f/%3.1f\n", loadavg * 100.0 * n_cpu, (float)(f_cpu / 1000000.0f), (float)(f_cpu_max / 100000000.0f * max_pct));
         } else {
-            printf("%3.1f%%\n", loadavg*100.0);
-            printf("%3.1f%%\n", loadavg*100.0);
+            printf("%3.1f%%\n", loadavg * 100.0f);
+            printf("%3.1f%%\n", loadavg * 100.0f);
         }
         if(loadavg > 0.95) {
             return 33;
