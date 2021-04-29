@@ -11,13 +11,13 @@ wget https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
 tar -xf package-query.tar.gz
 cd package-query
 makepkg -s
-sudo pacman -U *.xz
+sudo pacman -U *.zst
 cd ..
 rm -rf package-query*
 tar -xf yaourt.tar.gz 
 cd yaourt
 makepkg -s
-sudo pacman -U *.xz
+sudo pacman -U *.zst
 cd ..
 rm -rf yaourt*
 
@@ -71,22 +71,22 @@ yaourt -S --noconfirm ntp tzupdate
 #yaourt -S --noconfirm nvidia bumblebee bbswitch nvidia-settings nvidia-utils ttf-liberation xf86-video-intel 
 
 # python develop
-#yaourt -S --noconfirm pycharm-community-edition
+yaourt -S --noconfirm pycharm-community-edition
 
 # browser
 yaourt -S --noconfirm google-chrome
 
 # latex
-#yaourt -S --noconfirm texlive-most texlive-lang texlive-langextra biber texmaker
+yaourt -S --noconfirm texlive-most texlive-lang texlive-langextra biber texmaker
 
 # c/c++ develop
-#yaourt -S --noconfirm qtcreator
+yaourt -S --noconfirm qtcreator
 
 # Zertier
-#yaourt -S zerotier-one
+yaourt -S zerotier-one
 
 # SMB client
-#yaourt -S --noconfirm gvfs-smb sshfs
+yaourt -S --noconfirm gvfs-smb sshfs
 
 # default file browser
 xdg-mime default thunar.desktop inode/directory

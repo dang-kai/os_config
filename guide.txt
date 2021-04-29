@@ -1,37 +1,37 @@
 --------BOOTABLE IMAGE--------
 - Make partitions. 
-	BIOS + MBR + FDISK / UEFI + GPT + GDISK
-	(512M UEFI +) 16G swap + root
-	mkfs.fat -F32 /dev/sda1
+    BIOS + MBR + FDISK / UEFI + GPT + GDISK
+    (512M UEFI +) 16G swap + root
+    mkfs.fat -F32 /dev/sda1
     mkswap /dev/sda2
     mkfs.ext4 /dev/sda3
 - Internet
-	ip link set <dev> up
-	iw dev <dev> link/scan/connect
-	dhcpcd <dev>
+    ip link set <dev> up
+    iw dev <dev> link/scan/connect
+    dhcpcd <dev>
 - Mirror
-	pacman -S reflector
-	reflector --verbose -l 50 -p http --sort rate --save </etc/pacman.d/mirrorlist>
+    pacman -S reflector
+    reflector --verbose -l 50 -p http --sort rate --save </etc/pacman.d/mirrorlist>
 - Mount
-	swapon /dev/sda2
-	mount /dev/sda3 /mnt
+    swapon /dev/sda2
+    mount /dev/sda3 /mnt
     mkdir /mnt/boot
-	mount /dev/sda1 /mnt/boot
+    mount /dev/sda1 /mnt/boot
 - Install system
-	pacstrap /mnt base base-devel
-	genfstab -U /mnt >> /mnt/etc/fstab
+    pacstrap /mnt linux linur-firmware base base-devel
+    genfstab -U /mnt >> /mnt/etc/fstab
 - Chroot
-	arch-chroot /mnt
+    arch-chroot /mnt
 --------CHROOT--------
 - Install git
-	pacman -S git
-	git clone https://github.com/dang-kai/install_archlinux.git
+    pacman -S git
+    git clone https://github.com/dang-kai/install_archlinux.git
 - Initialize system
-	bash init_system.sh
+    bash init_system.sh
 - Grub (MBR boot only)
-	pacman -S grub
-	grub-install --target=i386-pc /dev/sdX
-	grub-mkconfig -o /boot/grub/grub.cfg
+    pacman -S grub
+    grub-install --target=i386-pc /dev/sdX
+    grub-mkconfig -o /boot/grub/grub.cfg
 - efibootmgr (EFI boot only)
     efibootmgr --disk /dev/sda --part 1 --create --label 'Arch Linux' --loader /vmlinuz-linux --unicode 'root=/dev/sda3 rw initrd=\intel-ucode.img initrd=\initramfs-linux.img resume=/dev/sda2' --verbose
     If bootx64.efi is required, install grub with fallback path.
